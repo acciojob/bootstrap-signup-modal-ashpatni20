@@ -20,31 +20,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLabel">Create Account</h5>
-                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-<button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-
+                    <!-- Unique ID for close button -->
+                    <button type="button" id="closeModalBtn" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                    <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" placeholder="Enter email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">Your information is safe with us.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
-  </div>
-	 <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-    <input type="password" placeholder="Confirm Password" class="form-control" id="exampleInputPassword1">
-  </div>
- 
-  
-</form>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" placeholder="Enter email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Your information is safe with us.</div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+                      </div>
+	                  <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" class="form-control" id="confirmPassword">
+                      </div>
+                   </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+                    <!-- "Submit" button should NOT have `btn-close` -->
+                    <button type="button" class="btn btn-secondary">Submit</button>
                 </div>
             </div>
         </div>
