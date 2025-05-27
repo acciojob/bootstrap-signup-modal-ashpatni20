@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Modal Example</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bootstrap Modal Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="container mt-5 text-center">
-        <!-- Button to trigger modal via JS -->
-        <button id="openModalBtn" class="btn btn-primary">Sign Up</button>
-    </div>
+  <div class="container mt-5 text-center">
+    <!-- Button to trigger modal via JS -->
+    <button id="openModalBtn" class="btn btn-primary">Sign Up</button>
+  </div>
 
-    <!-- Modal Structure -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Create Account</h5>
-                    <!-- Close button with correct attributes -->
-                    <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                   <form>
-                      <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" placeholder="Enter email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Your information is safe with us.</div>
-                      </div>
-                      <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" placeholder="Password" class="form-control" id="password">
-                      </div>
-	                  <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" placeholder="Confirm Password" class="form-control" id="confirmPassword">
-                      </div>
-                   </form>
-                </div>
-                <div class="modal-footer">
-                    <!-- Submit button (not closing the modal) -->
-                    <button type="button" class="btn btn-secondary">Submit</button>
-                </div>
-            </div>
+  <!-- Modal Structure -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Create Account</h5>
+          <!-- Close button (Bootstrap handles this) -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" placeholder="Enter email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Your information is safe with us.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" placeholder="Password" class="form-control" id="password">
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" placeholder="Confirm Password" class="form-control" id="confirmPassword">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- Submit button (doesn't close modal) -->
+          <button type="button" class="btn btn-secondary">Submit</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JS + Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS + Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        // Initialize the Bootstrap modal
-        var myModalEl = document.getElementById('myModal');
-        var myModal = new bootstrap.Modal(myModalEl);
+  <script>
+    // Initialize the Bootstrap modal
+    var myModalEl = document.getElementById('myModal');
+    var myModal = new bootstrap.Modal(myModalEl);
 
-        // Open modal when the button is clicked
-        document.getElementById('openModalBtn').addEventListener('click', function () {
-            myModal.show();
-        });
+    // Open modal when the button is clicked
+    document.getElementById('openModalBtn').addEventListener('click', function () {
+      myModal.show();
+    });
 
-        // Ensure the modal closes when clicking the close button
-        document.querySelector('.close').addEventListener('click', function () {
-            myModal.hide();
-        });
+    // Log modal visibility events
+    myModalEl.addEventListener('shown.bs.modal', function () {
+      console.log('Modal is fully visible now');
+    });
 
-        // Event listeners for modal open and close
-        myModalEl.addEventListener('shown.bs.modal', function () {
-            console.log('Modal is fully visible now');
-        });
-
-        myModalEl.addEventListener('hidden.bs.modal', function () {
-            console.log('Modal is now hidden');
-        });
-    </script>
+    myModalEl.addEventListener('hidden.bs.modal', function () {
+      console.log('Modal is now hidden');
+    });
+  </script>
 
 </body>
 </html>
